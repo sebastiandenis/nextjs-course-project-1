@@ -49,7 +49,10 @@ export const getAllEvents = () => {
   return DUMMY_EVENTS;
 };
 
-export const getFilteredEvents = (dateFilter: any): Array<IEvent> => {
+export const getFilteredEvents = (dateFilter: {
+  year: number;
+  month: number;
+}): Array<IEvent> => {
   const { year, month } = dateFilter;
 
   let filteredEvents = DUMMY_EVENTS.filter((event) => {
